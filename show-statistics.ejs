@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= stats.team.name %> Statistics</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #131f4f; 
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            height: auto;
+        }
+
+        p {
+            color: #333;
+            padding: 5px 20px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1><%= stats.team.name %> Statistics</h1>
+    <img src="<%= stats.team.logo %>" alt="<%= stats.team.name %> Logo">
+    <p>Form: <%= stats.form %></p>
+
+    <h2>Fixtures</h2>
+    <p>Played: Home - <%= stats.fixtures.played.home %>, Away - <%= stats.fixtures.played.away %>, Total - <%= stats.fixtures.played.total %></p>
+    <p>Wins: Home - <%= stats.fixtures.wins.home %>, Away - <%= stats.fixtures.wins.away %>, Total - <%= stats.fixtures.wins.total %></p>
+    <p>Draws: Total - <%= stats.fixtures.draws.total %></p>
+    <p>Losses: Total - <%= stats.fixtures.loses.total %></p>
+
+    <h2>Goals</h2>
+    <p>Goals For: Home - <%= stats.goals.for.total.home %>, Away - <%= stats.goals.for.total.away %>, Total - <%= stats.goals.for.total.total %></p>
+    <p>Goals Against: Home - <%= stats.goals.against.total.home %>, Away - <%= stats.goals.against.total.away %>, Total - <%= stats.goals.against.total.total %></p>
+
+    <h2>Clean Sheets</h2>
+    <p>Total: <%= stats.clean_sheet.total %></p>
+
+    <h2>Penalties</h2>
+    <p>Scored: <%= stats.penalty.scored.total %>, Percentage: <%= stats.penalty.scored.percentage %></p>
+
+    <h2>Cards</h2>
+    <p>Yellow Cards: Total - <%= stats.cards.yellow['76-90'] ? stats.cards.yellow['76-90'].total : 'N/A' %></p>
+    <p>Red Cards: Total - <%= stats.cards.red['76-90'] ? stats.cards.red['76-90'].total : 'N/A' %></p>
+
+
+</body>
+</html>
